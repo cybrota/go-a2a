@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"strings"
 
 	"github.com/cybrota/go-a2a/a2a"
 )
@@ -43,7 +44,7 @@ func NewCardResolver(BaseURL string, AgentCardPath string) *CardResolver {
 		AgentCardPath = "./well-known/agent.json"
 	}
 	return &CardResolver{
-		BaseURL:       BaseURL,
-		AgentCardPath: AgentCardPath,
+		BaseURL:       strings.TrimSuffix(BaseURL, "/"),
+		AgentCardPath: strings.TrimPrefix(AgentCardPath, "/"),
 	}
 }
