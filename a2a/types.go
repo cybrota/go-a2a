@@ -18,7 +18,7 @@ type A2ARequest interface{}
 
 type AgentAuthentication struct {
 	// Credentials corresponds to the JSON schema field "credentials".
-	Credentials interface{} `json:"credentials,omitempty" yaml:"credentials,omitempty" mapstructure:"credentials,omitempty"`
+	Credentials string `json:"credentials,omitempty" yaml:"credentials,omitempty" mapstructure:"credentials,omitempty"`
 
 	// Schemes corresponds to the JSON schema field "schemes".
 	Schemes []string `json:"schemes" yaml:"schemes" mapstructure:"schemes"`
@@ -92,10 +92,10 @@ type AgentCard struct {
 	DefaultOutputModes []string `json:"defaultOutputModes,omitempty" yaml:"defaultOutputModes,omitempty" mapstructure:"defaultOutputModes,omitempty"`
 
 	// Description corresponds to the JSON schema field "description".
-	Description interface{} `json:"description,omitempty" yaml:"description,omitempty" mapstructure:"description,omitempty"`
+	Description string `json:"description,omitempty" yaml:"description,omitempty" mapstructure:"description,omitempty"`
 
 	// DocumentationUrl corresponds to the JSON schema field "documentationUrl".
-	DocumentationUrl interface{} `json:"documentationUrl,omitempty" yaml:"documentationUrl,omitempty" mapstructure:"documentationUrl,omitempty"`
+	DocumentationUrl string `json:"documentationUrl,omitempty" yaml:"documentationUrl,omitempty" mapstructure:"documentationUrl,omitempty"`
 
 	// Name corresponds to the JSON schema field "name".
 	Name string `json:"name" yaml:"name" mapstructure:"name"`
@@ -115,7 +115,7 @@ type AgentCard struct {
 
 type AgentCardAuthentication struct {
 	// Credentials corresponds to the JSON schema field "credentials".
-	Credentials interface{} `json:"credentials,omitempty" yaml:"credentials,omitempty" mapstructure:"credentials,omitempty"`
+	Credentials string `json:"credentials,omitempty" yaml:"credentials,omitempty" mapstructure:"credentials,omitempty"`
 
 	// Schemes corresponds to the JSON schema field "schemes".
 	Schemes []string `json:"schemes" yaml:"schemes" mapstructure:"schemes"`
@@ -228,7 +228,7 @@ type AgentProvider struct {
 	Organization string `json:"organization" yaml:"organization" mapstructure:"organization"`
 
 	// Url corresponds to the JSON schema field "url".
-	Url interface{} `json:"url,omitempty" yaml:"url,omitempty" mapstructure:"url,omitempty"`
+	Url string `json:"url,omitempty" yaml:"url,omitempty" mapstructure:"url,omitempty"`
 }
 
 // UnmarshalJSON implements json.Unmarshaler.
@@ -251,7 +251,7 @@ func (j *AgentProvider) UnmarshalJSON(value []byte) error {
 
 type AgentSkill struct {
 	// Description corresponds to the JSON schema field "description".
-	Description interface{} `json:"description,omitempty" yaml:"description,omitempty" mapstructure:"description,omitempty"`
+	Description string `json:"description,omitempty" yaml:"description,omitempty" mapstructure:"description,omitempty"`
 
 	// Examples corresponds to the JSON schema field "examples".
 	Examples []string `json:"examples,omitempty" yaml:"examples,omitempty" mapstructure:"examples,omitempty"`
@@ -295,22 +295,22 @@ func (j *AgentSkill) UnmarshalJSON(value []byte) error {
 
 type Artifact struct {
 	// Append corresponds to the JSON schema field "append".
-	Append interface{} `json:"append,omitempty" yaml:"append,omitempty" mapstructure:"append,omitempty"`
+	Append bool `json:"append,omitempty" yaml:"append,omitempty" mapstructure:"append,omitempty"`
 
 	// Description corresponds to the JSON schema field "description".
-	Description interface{} `json:"description,omitempty" yaml:"description,omitempty" mapstructure:"description,omitempty"`
+	Description string `json:"description,omitempty" yaml:"description,omitempty" mapstructure:"description,omitempty"`
 
 	// Index corresponds to the JSON schema field "index".
 	Index int `json:"index,omitempty" yaml:"index,omitempty" mapstructure:"index,omitempty"`
 
 	// LastChunk corresponds to the JSON schema field "lastChunk".
-	LastChunk interface{} `json:"lastChunk,omitempty" yaml:"lastChunk,omitempty" mapstructure:"lastChunk,omitempty"`
+	LastChunk bool `json:"lastChunk,omitempty" yaml:"lastChunk,omitempty" mapstructure:"lastChunk,omitempty"`
 
 	// Metadata corresponds to the JSON schema field "metadata".
 	Metadata ArtifactMetadata `json:"metadata,omitempty" yaml:"metadata,omitempty" mapstructure:"metadata,omitempty"`
 
 	// Name corresponds to the JSON schema field "name".
-	Name interface{} `json:"name,omitempty" yaml:"name,omitempty" mapstructure:"name,omitempty"`
+	Name string `json:"name,omitempty" yaml:"name,omitempty" mapstructure:"name,omitempty"`
 
 	// Parts corresponds to the JSON schema field "parts".
 	Parts []ArtifactPartsElem `json:"parts" yaml:"parts" mapstructure:"parts"`
@@ -356,7 +356,7 @@ func (j *Artifact) UnmarshalJSON(value []byte) error {
 
 type AuthenticationInfo struct {
 	// Credentials corresponds to the JSON schema field "credentials".
-	Credentials interface{} `json:"credentials,omitempty" yaml:"credentials,omitempty" mapstructure:"credentials,omitempty"`
+	Credentials string `json:"credentials,omitempty" yaml:"credentials,omitempty" mapstructure:"credentials,omitempty"`
 
 	// Schemes corresponds to the JSON schema field "schemes".
 	Schemes []string `json:"schemes" yaml:"schemes" mapstructure:"schemes"`
@@ -392,7 +392,7 @@ func (j *AuthenticationInfo) UnmarshalJSON(value []byte) error {
 
 type CancelTaskRequest struct {
 	// Id corresponds to the JSON schema field "id".
-	Id interface{} `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
+	Id string `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
 
 	// Jsonrpc corresponds to the JSON schema field "jsonrpc".
 	Jsonrpc string `json:"jsonrpc,omitempty" yaml:"jsonrpc,omitempty" mapstructure:"jsonrpc,omitempty"`
@@ -433,7 +433,7 @@ type CancelTaskResponse struct {
 	Error *CancelTaskResponseError `json:"error,omitempty" yaml:"error,omitempty" mapstructure:"error,omitempty"`
 
 	// Id corresponds to the JSON schema field "id".
-	Id interface{} `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
+	Id string `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
 
 	// Jsonrpc corresponds to the JSON schema field "jsonrpc".
 	Jsonrpc string `json:"jsonrpc,omitempty" yaml:"jsonrpc,omitempty" mapstructure:"jsonrpc,omitempty"`
@@ -491,7 +491,7 @@ type CancelTaskResponseResult struct {
 	Metadata CancelTaskResponseResultMetadata `json:"metadata,omitempty" yaml:"metadata,omitempty" mapstructure:"metadata,omitempty"`
 
 	// SessionId corresponds to the JSON schema field "sessionId".
-	SessionId interface{} `json:"sessionId,omitempty" yaml:"sessionId,omitempty" mapstructure:"sessionId,omitempty"`
+	SessionId string `json:"sessionId,omitempty" yaml:"sessionId,omitempty" mapstructure:"sessionId,omitempty"`
 
 	// Status corresponds to the JSON schema field "status".
 	Status TaskStatus `json:"status" yaml:"status" mapstructure:"status"`
@@ -598,16 +598,16 @@ func (j *DataPart) UnmarshalJSON(value []byte) error {
 // Ensures that either 'bytes' or 'uri' is provided, but not both.
 type FileContent struct {
 	// Bytes corresponds to the JSON schema field "bytes".
-	Bytes interface{} `json:"bytes,omitempty" yaml:"bytes,omitempty" mapstructure:"bytes,omitempty"`
+	Bytes []byte `json:"bytes,omitempty" yaml:"bytes,omitempty" mapstructure:"bytes,omitempty"`
 
 	// MimeType corresponds to the JSON schema field "mimeType".
-	MimeType interface{} `json:"mimeType,omitempty" yaml:"mimeType,omitempty" mapstructure:"mimeType,omitempty"`
+	MimeType string `json:"mimeType,omitempty" yaml:"mimeType,omitempty" mapstructure:"mimeType,omitempty"`
 
 	// Name corresponds to the JSON schema field "name".
-	Name interface{} `json:"name,omitempty" yaml:"name,omitempty" mapstructure:"name,omitempty"`
+	Name string `json:"name,omitempty" yaml:"name,omitempty" mapstructure:"name,omitempty"`
 
 	// Uri corresponds to the JSON schema field "uri".
-	Uri interface{} `json:"uri,omitempty" yaml:"uri,omitempty" mapstructure:"uri,omitempty"`
+	Uri string `json:"uri,omitempty" yaml:"uri,omitempty" mapstructure:"uri,omitempty"`
 }
 
 type FilePart struct {
@@ -659,7 +659,7 @@ func (j *FilePart) UnmarshalJSON(value []byte) error {
 
 type GetTaskPushNotificationRequest struct {
 	// Id corresponds to the JSON schema field "id".
-	Id interface{} `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
+	Id string `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
 
 	// Jsonrpc corresponds to the JSON schema field "jsonrpc".
 	Jsonrpc string `json:"jsonrpc,omitempty" yaml:"jsonrpc,omitempty" mapstructure:"jsonrpc,omitempty"`
@@ -803,7 +803,7 @@ func (j *GetTaskPushNotificationResponse) UnmarshalJSON(value []byte) error {
 
 type GetTaskRequest struct {
 	// Id corresponds to the JSON schema field "id".
-	Id interface{} `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
+	Id string `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
 
 	// Jsonrpc corresponds to the JSON schema field "jsonrpc".
 	Jsonrpc string `json:"jsonrpc,omitempty" yaml:"jsonrpc,omitempty" mapstructure:"jsonrpc,omitempty"`
@@ -844,7 +844,7 @@ type GetTaskResponse struct {
 	Error *GetTaskResponseError `json:"error,omitempty" yaml:"error,omitempty" mapstructure:"error,omitempty"`
 
 	// Id corresponds to the JSON schema field "id".
-	Id interface{} `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
+	Id string `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
 
 	// Jsonrpc corresponds to the JSON schema field "jsonrpc".
 	Jsonrpc string `json:"jsonrpc,omitempty" yaml:"jsonrpc,omitempty" mapstructure:"jsonrpc,omitempty"`
@@ -902,7 +902,7 @@ type GetTaskResponseResult struct {
 	Metadata GetTaskResponseResultMetadata `json:"metadata,omitempty" yaml:"metadata,omitempty" mapstructure:"metadata,omitempty"`
 
 	// SessionId corresponds to the JSON schema field "sessionId".
-	SessionId interface{} `json:"sessionId,omitempty" yaml:"sessionId,omitempty" mapstructure:"sessionId,omitempty"`
+	SessionId string `json:"sessionId,omitempty" yaml:"sessionId,omitempty" mapstructure:"sessionId,omitempty"`
 
 	// Status corresponds to the JSON schema field "status".
 	Status TaskStatus `json:"status" yaml:"status" mapstructure:"status"`
@@ -1117,7 +1117,7 @@ func (j *JSONRPCError) UnmarshalJSON(value []byte) error {
 
 type JSONRPCMessage struct {
 	// Id corresponds to the JSON schema field "id".
-	Id interface{} `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
+	Id string `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
 
 	// Jsonrpc corresponds to the JSON schema field "jsonrpc".
 	Jsonrpc string `json:"jsonrpc,omitempty" yaml:"jsonrpc,omitempty" mapstructure:"jsonrpc,omitempty"`
@@ -1143,7 +1143,7 @@ func (j *JSONRPCMessage) UnmarshalJSON(value []byte) error {
 
 type JSONRPCRequest struct {
 	// Id corresponds to the JSON schema field "id".
-	Id interface{} `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
+	Id string `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
 
 	// Jsonrpc corresponds to the JSON schema field "jsonrpc".
 	Jsonrpc string `json:"jsonrpc,omitempty" yaml:"jsonrpc,omitempty" mapstructure:"jsonrpc,omitempty"`
@@ -1196,7 +1196,7 @@ type JSONRPCResponse struct {
 	Error *JSONRPCResponseError `json:"error,omitempty" yaml:"error,omitempty" mapstructure:"error,omitempty"`
 
 	// Id corresponds to the JSON schema field "id".
-	Id interface{} `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
+	Id string `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
 
 	// Jsonrpc corresponds to the JSON schema field "jsonrpc".
 	Jsonrpc string `json:"jsonrpc,omitempty" yaml:"jsonrpc,omitempty" mapstructure:"jsonrpc,omitempty"`
@@ -1382,7 +1382,7 @@ type PushNotificationConfig struct {
 	Authentication *PushNotificationConfigAuthentication `json:"authentication,omitempty" yaml:"authentication,omitempty" mapstructure:"authentication,omitempty"`
 
 	// Token corresponds to the JSON schema field "token".
-	Token interface{} `json:"token,omitempty" yaml:"token,omitempty" mapstructure:"token,omitempty"`
+	Token string `json:"token,omitempty" yaml:"token,omitempty" mapstructure:"token,omitempty"`
 
 	// Url corresponds to the JSON schema field "url".
 	Url string `json:"url" yaml:"url" mapstructure:"url"`
@@ -1390,7 +1390,7 @@ type PushNotificationConfig struct {
 
 type PushNotificationConfigAuthentication struct {
 	// Credentials corresponds to the JSON schema field "credentials".
-	Credentials interface{} `json:"credentials,omitempty" yaml:"credentials,omitempty" mapstructure:"credentials,omitempty"`
+	Credentials string `json:"credentials,omitempty" yaml:"credentials,omitempty" mapstructure:"credentials,omitempty"`
 
 	// Schemes corresponds to the JSON schema field "schemes".
 	Schemes []string `json:"schemes" yaml:"schemes" mapstructure:"schemes"`
@@ -1488,7 +1488,7 @@ func (j *PushNotificationNotSupportedError) UnmarshalJSON(value []byte) error {
 
 type SendTaskRequest struct {
 	// Id corresponds to the JSON schema field "id".
-	Id interface{} `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
+	Id string `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
 
 	// Jsonrpc corresponds to the JSON schema field "jsonrpc".
 	Jsonrpc string `json:"jsonrpc,omitempty" yaml:"jsonrpc,omitempty" mapstructure:"jsonrpc,omitempty"`
@@ -1529,7 +1529,7 @@ type SendTaskResponse struct {
 	Error *SendTaskResponseError `json:"error,omitempty" yaml:"error,omitempty" mapstructure:"error,omitempty"`
 
 	// Id corresponds to the JSON schema field "id".
-	Id interface{} `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
+	Id string `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
 
 	// Jsonrpc corresponds to the JSON schema field "jsonrpc".
 	Jsonrpc string `json:"jsonrpc,omitempty" yaml:"jsonrpc,omitempty" mapstructure:"jsonrpc,omitempty"`
@@ -1587,7 +1587,7 @@ type SendTaskResponseResult struct {
 	Metadata SendTaskResponseResultMetadata `json:"metadata,omitempty" yaml:"metadata,omitempty" mapstructure:"metadata,omitempty"`
 
 	// SessionId corresponds to the JSON schema field "sessionId".
-	SessionId interface{} `json:"sessionId,omitempty" yaml:"sessionId,omitempty" mapstructure:"sessionId,omitempty"`
+	SessionId string `json:"sessionId,omitempty" yaml:"sessionId,omitempty" mapstructure:"sessionId,omitempty"`
 
 	// Status corresponds to the JSON schema field "status".
 	Status TaskStatus `json:"status" yaml:"status" mapstructure:"status"`
@@ -1642,7 +1642,7 @@ func (j *SendTaskResponse) UnmarshalJSON(value []byte) error {
 
 type SendTaskStreamingRequest struct {
 	// Id corresponds to the JSON schema field "id".
-	Id interface{} `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
+	Id string `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
 
 	// Jsonrpc corresponds to the JSON schema field "jsonrpc".
 	Jsonrpc string `json:"jsonrpc,omitempty" yaml:"jsonrpc,omitempty" mapstructure:"jsonrpc,omitempty"`
@@ -1683,7 +1683,7 @@ type SendTaskStreamingResponse struct {
 	Error *SendTaskStreamingResponseError `json:"error,omitempty" yaml:"error,omitempty" mapstructure:"error,omitempty"`
 
 	// Id corresponds to the JSON schema field "id".
-	Id interface{} `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
+	Id string `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
 
 	// Jsonrpc corresponds to the JSON schema field "jsonrpc".
 	Jsonrpc string `json:"jsonrpc,omitempty" yaml:"jsonrpc,omitempty" mapstructure:"jsonrpc,omitempty"`
@@ -1800,7 +1800,7 @@ func (j *SendTaskStreamingResponse) UnmarshalJSON(value []byte) error {
 
 type SetTaskPushNotificationRequest struct {
 	// Id corresponds to the JSON schema field "id".
-	Id interface{} `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
+	Id string `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
 
 	// Jsonrpc corresponds to the JSON schema field "jsonrpc".
 	Jsonrpc string `json:"jsonrpc,omitempty" yaml:"jsonrpc,omitempty" mapstructure:"jsonrpc,omitempty"`
@@ -1841,7 +1841,7 @@ type SetTaskPushNotificationResponse struct {
 	Error *SetTaskPushNotificationResponseError `json:"error,omitempty" yaml:"error,omitempty" mapstructure:"error,omitempty"`
 
 	// Id corresponds to the JSON schema field "id".
-	Id interface{} `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
+	Id string `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
 
 	// Jsonrpc corresponds to the JSON schema field "jsonrpc".
 	Jsonrpc string `json:"jsonrpc,omitempty" yaml:"jsonrpc,omitempty" mapstructure:"jsonrpc,omitempty"`
@@ -1953,7 +1953,7 @@ type Task struct {
 	Metadata TaskMetadata `json:"metadata,omitempty" yaml:"metadata,omitempty" mapstructure:"metadata,omitempty"`
 
 	// SessionId corresponds to the JSON schema field "sessionId".
-	SessionId interface{} `json:"sessionId,omitempty" yaml:"sessionId,omitempty" mapstructure:"sessionId,omitempty"`
+	SessionId string `json:"sessionId,omitempty" yaml:"sessionId,omitempty" mapstructure:"sessionId,omitempty"`
 
 	// Status corresponds to the JSON schema field "status".
 	Status TaskStatus `json:"status" yaml:"status" mapstructure:"status"`
@@ -2164,7 +2164,7 @@ func (j *TaskPushNotificationConfig) UnmarshalJSON(value []byte) error {
 
 type TaskQueryParams struct {
 	// HistoryLength corresponds to the JSON schema field "historyLength".
-	HistoryLength interface{} `json:"historyLength,omitempty" yaml:"historyLength,omitempty" mapstructure:"historyLength,omitempty"`
+	HistoryLength int `json:"historyLength,omitempty" yaml:"historyLength,omitempty" mapstructure:"historyLength,omitempty"`
 
 	// Id corresponds to the JSON schema field "id".
 	Id string `json:"id" yaml:"id" mapstructure:"id"`
@@ -2208,7 +2208,7 @@ func (j *TaskQueryParams) UnmarshalJSON(value []byte) error {
 
 type TaskResubscriptionRequest struct {
 	// Id corresponds to the JSON schema field "id".
-	Id interface{} `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
+	Id string `json:"id,omitempty" yaml:"id,omitempty" mapstructure:"id,omitempty"`
 
 	// Jsonrpc corresponds to the JSON schema field "jsonrpc".
 	Jsonrpc string `json:"jsonrpc,omitempty" yaml:"jsonrpc,omitempty" mapstructure:"jsonrpc,omitempty"`
@@ -2246,7 +2246,7 @@ func (j *TaskResubscriptionRequest) UnmarshalJSON(value []byte) error {
 
 type TaskSendParams struct {
 	// HistoryLength corresponds to the JSON schema field "historyLength".
-	HistoryLength interface{} `json:"historyLength,omitempty" yaml:"historyLength,omitempty" mapstructure:"historyLength,omitempty"`
+	HistoryLength int `json:"historyLength,omitempty" yaml:"historyLength,omitempty" mapstructure:"historyLength,omitempty"`
 
 	// Id corresponds to the JSON schema field "id".
 	Id string `json:"id" yaml:"id" mapstructure:"id"`
@@ -2284,7 +2284,7 @@ type TaskSendParamsPushNotification struct {
 	Authentication *TaskSendParamsPushNotificationAuthentication `json:"authentication,omitempty" yaml:"authentication,omitempty" mapstructure:"authentication,omitempty"`
 
 	// Token corresponds to the JSON schema field "token".
-	Token interface{} `json:"token,omitempty" yaml:"token,omitempty" mapstructure:"token,omitempty"`
+	Token string `json:"token,omitempty" yaml:"token,omitempty" mapstructure:"token,omitempty"`
 
 	// Url corresponds to the JSON schema field "url".
 	Url string `json:"url" yaml:"url" mapstructure:"url"`
@@ -2292,7 +2292,7 @@ type TaskSendParamsPushNotification struct {
 
 type TaskSendParamsPushNotificationAuthentication struct {
 	// Credentials corresponds to the JSON schema field "credentials".
-	Credentials interface{} `json:"credentials,omitempty" yaml:"credentials,omitempty" mapstructure:"credentials,omitempty"`
+	Credentials string `json:"credentials,omitempty" yaml:"credentials,omitempty" mapstructure:"credentials,omitempty"`
 
 	// Schemes corresponds to the JSON schema field "schemes".
 	Schemes []string `json:"schemes" yaml:"schemes" mapstructure:"schemes"`
